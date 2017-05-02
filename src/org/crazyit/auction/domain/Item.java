@@ -3,17 +3,6 @@ package org.crazyit.auction.domain;
 import java.util.*;
 
 import javax.persistence.*;
-
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 @Entity
 @Table(name="item")
 public class Item
@@ -62,6 +51,12 @@ public class Item
 	@OneToMany(targetEntity=Bid.class ,
 		mappedBy="bidItem")
 	private Set<Bid> bids = new HashSet<Bid>();
+	// 照片
+	@Column(name = "img")
+	private String img;
+	//备注
+	@Column(name = "beizhu")
+	private String beizhu;
 
 	// 无参数的构造器
 	public Item()
@@ -69,12 +64,30 @@ public class Item
 	}
 	// 初始化全部基本属性的构造器
 	public Item( String itemName , String itemDesc
-		, String itemRemark , double initPrice)
+		, String itemRemark , double initPrice,String img,String beizhu)
 	{
 		this.itemName = itemName;
 		this.itemDesc = itemDesc;
 		this.itemRemark = itemRemark;
 		this.initPrice = initPrice;
+		this.img=img;
+		this.beizhu=beizhu;
+	}
+
+	public String getBeizhu() {
+		return beizhu;
+	}
+
+	public void setBeizhu(String beizhu) {
+		this.beizhu = beizhu;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	// id的setter和getter方法

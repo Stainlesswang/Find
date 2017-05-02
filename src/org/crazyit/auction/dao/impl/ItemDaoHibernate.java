@@ -7,20 +7,20 @@ import org.crazyit.common.dao.impl.*;
 import org.crazyit.auction.domain.*;
 import org.crazyit.auction.business.*;
 import org.crazyit.auction.dao.*;
-
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 public class ItemDaoHibernate
 	extends BaseDaoHibernate4<Item> implements ItemDao
 {
+
+	/**
+	 * 获取全部不是自己的全部item
+	 * @return 全部的不是自己发布寻找中的Item
+	 */
+	public List<Item> findItemAll(Integer userID) {
+		return find("from Item as i where i.itemState.id=1 and i.owner.id!=?0"
+		,userID);
+
+	}
+
 	/**
 	 * 根据产品分类，获取当前拍卖的全部商品
 	 * @param kindId 种类id;

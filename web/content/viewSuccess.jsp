@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=GBK" language="java" errorPage="" %>
+<%@ page contentType="text/html; charset=gbk" language="java" errorPage="" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -8,7 +8,7 @@
 	<title>浏览赢取的全部物品</title>
 </head>
 <body>
-<table width="1300" align="center" cellspacing="0"
+<table width="1300" height="430" align="center" cellspacing="0"
 	background="">
 <tr>
 <td>

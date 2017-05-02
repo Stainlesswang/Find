@@ -1,14 +1,4 @@
-<%--
-网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
-author  yeeku.H.lee kongyeeku@163.com
-version  1.0
-Copyright (C), 2001-2012, yeeku.H.Lee
-This program is protected by copyright laws.
-Program Name:
-Date: 
---%>
-
-<%@ page contentType="text/html; charset=GBK" language="java" errorPage="" %>
+<%@ page contentType="text/html; charset=gbk" language="java" errorPage="" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -18,26 +8,17 @@ Date:
 	<title>管理拍卖种类</title>
 </head>
 <body>
-<table width="1300" align="center" 
-	cellspacing="0" background="">
+<table >
 <tr>
 <td>
 <br />
-<table width="80%" align="center" cellpadding="0"
-	cellspacing="1" style="border:1px solid black">
-<tr>
-	<td colspan="2" ><div class="mytitle">当前的物品种类如下：</div></td> 
-</tr>
+<table  class="table table-border table-striped table-bordered table-bg table-hover table-sort" >
 <s:iterator id="kind" value="kinds" status="st">
-<tr height="24" <s:if test="#st.odd">
-	style="background-color:#dddddd"</s:if>
-	<s:else>style="background-color:#eeeeee"</s:else>>
+<tr class="text-c">
 <td>种类名</td>
 <td><s:property value="kindName"/></td>
 </tr>
-<tr height="24" <s:if test="#st.odd">
-	style="background-color:#dddddd"</s:if>
-	<s:else>style="background-color:#eeeeee"</s:else>>
+<tr class="text-c">
 <td>种类描述</td>
 <td><s:property value="kindDesc"/></td>
 </tr>

@@ -20,6 +20,11 @@ import org.crazyit.auction.business.*;
 public interface ItemDao extends BaseDao<Item>
 {
 	/**
+	 * 获取全部不是自己的全部item
+	 * @return 全部的不是自己发布寻找中的Item
+	 */
+	public List<Item> findItemAll(Integer userId);
+	/**
 	 * 根据产品分类，获取当前拍卖的全部商品
 	 * @param kindId 种类id;
 	 * @return 该类的全部产品

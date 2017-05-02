@@ -43,6 +43,7 @@ public class LoginServlet extends BaseServlet
 			// 把验证的userId封装成JSONObject
 			JSONObject jsonObj = new JSONObject()
 				.put("userId" , userId);
+			System.out.println("--------------------------___Is Worked!");
 			// 输出响应
 			response.getWriter().println(jsonObj.toString());
 		}

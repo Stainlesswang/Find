@@ -1,31 +1,54 @@
-<%@ page contentType="text/html; charset=GBK" language="java" errorPage="" %>
+<%@ page contentType="text/html; charset=gbk" language="java" errorPage="" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-	<meta name="author" content="Yeeku.H.Lee(CrazyIt.org)" />
-	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
-	<title>商业拍卖Java EE程序框架</title>
+<head><title>登录页面</title>
 </head>
 <body>
-<table width="1300" align="center" cellspacing="0"
-	background="">
-<tr>
-<td >
-<h3>请输入用户名和密码登录系统</h3>
-<div align="center">
-<!-- 输出Action的错误提示 -->
-<s:actionerror cssClass="error"/>
-<s:form action="proLogin">
-	<s:textfield name="username" label="用户名"/>
-	<s:textfield name="password" label="密码"/>
-	<s:textfield name="vercode" label="验证码"/>
-	<s:submit value="登录"/>
-</s:form>
-验证码：<img name="d" src="auth.jpg">
-</div>
-</td>
-</tr>
-</table>
+
+		<br /><br /><br /><br/>
+				<input type="hidden" id="TenantId" name="TenantId" value="" />
+				<div class="header"></div>
+				<div class="loginWraper">
+					<div id="loginform" class="loginBox">
+				<form class="form form-horizontal" action="proLogin" method="post">
+					<div class="row cl" w>
+						<label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60d;</i></label>
+						<div class="formControls col-xs-8">
+							<s:textfield   id="username" name="username" type="text" placeholder="账户" class="input-text size-L"/>
+						</div>
+					</div>
+					<div class="row cl" >
+						<label class="form-label col-xs-3"><i class="Hui-iconfont">&#xe60e;</i></label>
+						<div class="formControls col-xs-8">
+							<s:textfield id="password" name="password" type="password" placeholder="密码" class="input-text size-L"/>
+						</div>
+					</div>
+					<div class="row cl">
+						<div class="formControls col-xs-8 col-xs-offset-3">
+							<input name="vercode" class="input-text size-L" type="text" placeholder="验证码" onblur="if(this.value==''){this.value='验证码:'}" onclick="if(this.value=='验证码:'){this.value='';}" value="验证码:" style="width:150px;"/>
+							<img src="auth.jpg"> <a id="kanbuq" href="javascript:;">看不清，换一张</a> </div>
+					</div>
+
+					<div class="row cl">
+						<div class="formControls col-xs-8 col-xs-offset-3">
+							<input name="" type="submit" class="btn btn-success radius size-L" value="&nbsp;登&nbsp;&nbsp;&nbsp;&nbsp;录&nbsp;"/>
+							<input name="" type="reset" class="btn btn-default radius size-L" value="&nbsp;取&nbsp;&nbsp;&nbsp;&nbsp;消&nbsp;"/>
+						</div>
+					</div>
+				</form>
+					</div>
+				</div>
+		<script>
+			var _hmt = _hmt || [];
+			(function() {
+				var hm = document.createElement("script");
+				hm.src = "//hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
+			})();
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080836300300be57b7f34f4b3e97d911' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 </body>
 </html>

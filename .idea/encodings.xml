@@ -1,4 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/AddBidAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/AddItemAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/AddKindAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/LoginAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/MgrItemAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/MgrKindAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/ViewBidAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/ViewDetailAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/ViewFailAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/ViewItemAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/ViewKindAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/ViewSuAction.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/action/interceptor/AuthorityInterceptor.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/business/BidBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/business/ItemBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/business/KindBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/dao/AuctionUserDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/dao/BidDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/dao/ItemDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/dao/impl/AuctionUserDaoHibernate.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/dao/impl/BidDaoHibernate.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/dao/impl/ItemDaoHibernate.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/domain/AuctionUser.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/domain/Bid.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/domain/Item.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/domain/Kind.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/domain/State.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/exception/AuctionException.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/schedule/CheckWiner.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/service/AuctionManager.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/service/impl/AuctionManagerImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/AddBidServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/AddItemServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/AddKindServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/Authority.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/GetItemServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/ItemListServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/LoginServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/ViewBidServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/ViewFailServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/ViewKindServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/ViewOwnerItemServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/ViewSuccServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/servlet/base/BaseServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/auction/web/AuthImg.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/common/dao/BaseDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/org/crazyit/common/dao/impl/BaseDaoHibernate4.java" charset="GBK" />
+  </component>
 </project>

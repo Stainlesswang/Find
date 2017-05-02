@@ -8,8 +8,9 @@
 
 	<!-- 配置daoTemplate，作为所有DAO组件的模板 -->
 	<!-- 为DAO组件注入SessionFactory引用 -->
-	<bean id="daoTemplate" abstract="true"
-		p:sessionFactory-ref="sessionFactory"/>
+	<bean id="daoTemplate"  abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	<!-- 配置stateDao组件 -->
 	<bean id="stateDao" parent="daoTemplate"
 		class="org.crazyit.auction.dao.impl.StateDaoHibernate"/>

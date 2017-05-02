@@ -7,7 +7,7 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/applicationContext.xml,
-			/WEB-INF/daoContext.xml</param-value>
+    /WEB-INF/daoContext.xml</param-value>
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener

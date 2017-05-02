@@ -1,6 +1,4 @@
-
-
-<%@ page contentType="text/html; charset=GBK" language="java" errorPage="" %>
+<%@ page contentType="text/html; charset=gbk" language="java" errorPage="" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
@@ -10,14 +8,15 @@
 	<title>您参与的全部竞价</title>
 </head>
 <body>
-<table width="1300" align="center" cellspacing="0"
+<table width="1300" height="430" align="center" cellspacing="0"
 	background="">
 <tr>
 <td>
 <br />
 <table width="80%" align="center" cellpadding="0" cellspacing="1" style="border:1px solid black">
   <tr>
-    <td colspan="4" ><div class="mytitle">您参与的全部竞价</div></td> 
+    <td colspan="4" ><div class="mytitle">您参与的全部竞价</div></td>
+	  <s:actionmessage/>
   </tr>
   <tr  height="30">
     <th>物品名</th>

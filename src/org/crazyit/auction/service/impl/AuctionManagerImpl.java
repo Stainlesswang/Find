@@ -58,6 +58,26 @@ public class AuctionManagerImpl implements AuctionManager
 		this.message = message;
 	}
 
+
+
+	//获取全部不是自己的全部item
+	public List<ItemBean> findItemAll(Integer userId) throws  AuctionException{
+
+		try{
+			List<Item> items = itemDao.findItemAll(userId);
+			List<ItemBean> result = new ArrayList<ItemBean>();
+			for (Iterator<Item> it = items.iterator() ; it.hasNext() ; )
+			{
+				ItemBean ib = new ItemBean();
+				initItem(ib , it.next());
+				result.add(ib);
+			}
+			return result;
+		}catch (Exception e){
+			log.debug(e.getMessage());
+			throw new AuctionException("查询所有不是自己的item出错！");
+		}
+	}
 	/**
 	 * 根据赢取者查询物品
 	 * @param winerId 赢取者的ID
@@ -225,7 +245,7 @@ public class AuctionManagerImpl implements AuctionManager
 		{
 			Kind k = kindDao.get(Kind.class , kind);
 			AuctionUser owner = userDao.get(AuctionUser.class , userId);
-			// 设置Item的属性
+//			// 设置Item的属性
 			item.setAddtime(new Date());
 			Calendar c = Calendar.getInstance();
 			c.add(Calendar.DATE , avail);
@@ -234,6 +254,8 @@ public class AuctionManagerImpl implements AuctionManager
 			item.setItemState(stateDao.get(State.class , 1));
 			item.setKind(k);
 			item.setOwner(owner);
+			item.setImg("asd");
+
 			// 持久化Item对象
 			itemDao.save(item);
 			return item.getId();
@@ -390,27 +412,32 @@ public class AuctionManagerImpl implements AuctionManager
 			for (int i = 0 ; i < itemList.size() ; i++ )
 			{
 				Item item = (Item)itemList.get(i);
-				if (!item.getEndtime().after(new Date()))
-				{
-					// 根据指定物品和最高竞价来查询用户
-					AuctionUser au = bidDao.findUserByItemAndPrice(
-						item.getId() , item.getMaxPrice());
-					// 如果该物品的最高竞价者不为null
-					if (au != null)
-					{
-						// 将该竞价者设为赢取者
-						item.setWiner(au);
-						// 修改物品的状态成为“被赢取”
-						item.setItemState(stateDao.get(State.class , 2));
-						itemDao.save(item);
-					}
-					else
-					{
-						// 设置该物品的状态为“流拍”
+				if (!item.getEndtime().after(new Date())){
+					// 设置该物品的状态为“流拍”
 						item.setItemState(stateDao.get(State.class , 3));
 						itemDao.save(item);
-					}
 				}
+//				if (!item.getEndtime().after(new Date()))
+//				{
+//					// 根据指定物品和最高竞价来查询用户
+//					AuctionUser au = bidDao.findUserByItemAndPrice(
+//						item.getId() , item.getMaxPrice());
+//					// 如果该物品的最高竞价者不为null
+//					if (au != null)
+//					{
+//						// 将该竞价者设为赢取者
+//						item.setWiner(au);
+//						// 修改物品的状态成为“被赢取”
+//						item.setItemState(stateDao.get(State.class , 2));
+//						itemDao.save(item);
+//					}
+//					else
+//					{
+//						// 设置该物品的状态为“流拍”
+//						item.setItemState(stateDao.get(State.class , 3));
+//						itemDao.save(item);
+//					}
+//				}
 			}
 		}
 		catch (Exception ex)
@@ -443,6 +470,7 @@ public class AuctionManagerImpl implements AuctionManager
 	 */
 	private void initItem(ItemBean ib , Item item)
 	{
+		System.out.println(item.getClass());
 		ib.setId(item.getId());
 		ib.setName(item.getItemName());
 		ib.setDesc(item.getItemDesc());
@@ -459,5 +487,7 @@ public class AuctionManagerImpl implements AuctionManager
 			ib.setState(item.getItemState().getStateName());
 		ib.setInitPrice(item.getInitPrice());
 		ib.setMaxPrice(item.getMaxPrice());
+		ib.setImg(item.getImg());
+		ib.setBeizhu(item.getBeizhu());
 	}
 }

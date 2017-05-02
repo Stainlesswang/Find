@@ -1,33 +1,29 @@
-<%@ page contentType="text/html; charset=GBK" language="java" errorPage="" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" errorPage="" %>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta name="author" content="Yeeku.H.Lee(CrazyIt.org)" />
 	<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
-	<title>³ö´íÌáÊ¾Ò³</title>
+	<title>å‡ºé”™æç¤ºé¡µ</title>
 </head>
 <body>
-<table width="1300" align="center" cellspacing="0"
+<table width="1300" height="430" align="center" cellspacing="0"
 	>
 <tr> 
 	<td height="39" valign="top">
 		<div align="center" style="font-size:11pt;color:red;font-weight:bold">
-			ÏµÍ³´¦Àí¹ý³ÌÖÐ·¢ÉúÁËÒ»¸ö´íÎó£¬ÐÅÏ¢ÈçÏÂ£º</div>
+			ç³»ç»Ÿå¤„ç†è¿‡ç¨‹ä¸­å‘ç”Ÿäº†ä¸€ä¸ªé”™è¯¯ï¼Œä¿¡æ¯å¦‚ä¸‹ï¼š</div>
 	</td>
 </tr>
 <tr>
 	<td height="100">
 		<center>
 		<div class="error"><br /><br />
-			<s:property value="errMsg"/>
+		<s:property value="errMsg"/>
 		</div>
 		</center>
 	</td>
-</tr>
-<tr>
-<td><div align="center" style="font:10pt">ÇëÄúÏÈºË¶ÔÊäÈë£¬
-	Èç¹ûÔÙ´Î³öÏÖ¸Ã´íÎó£¬ÇëµÇÂ¼<a href="http://www.crazyit.org">·è¿ñJavaÁªÃË</a>Ìá½»´íÎóÐÅÏ¢</div><br></td>
 </tr>
 </table>
 </body>

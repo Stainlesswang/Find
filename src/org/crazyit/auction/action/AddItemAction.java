@@ -8,16 +8,6 @@ import org.crazyit.auction.domain.*;
 import org.crazyit.auction.exception.AuctionException;
 import org.crazyit.auction.action.base.BaseAction;
 
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 public class AddItemAction extends BaseAction
 {
 	private Item item;
@@ -27,13 +17,15 @@ public class AddItemAction extends BaseAction
 	// 处理用户请求的execute方法
 	public String execute() throws Exception
 	{
+
 		Map session = ActionContext.getContext().getSession();
 		String ver2 = (String)session.get("rand");
 		// 强制系统刚生成的随机验证码失效
 		session.put("rand" , null);
 		Integer userId = (Integer)session.get("userId");
 		// 如果用户输入的验证码与系统随机产生的验证码相同
-		if (vercode.equals(ver2))
+//		if (vercode.equals(ver2))
+			if (true)
 		{
 			// 根据用户选择有效时间选项，指定实际的有效时间
 			switch(avail)
@@ -49,6 +41,20 @@ public class AddItemAction extends BaseAction
 					break;
 			}
 			// 添加物品
+			System.out.println("item==================================================="+
+					getItem().getItemName());
+			System.out.println("item==================================================="+
+					getItem().getBeizhu());
+			System.out.println("item==================================================="+
+					getItem().getInitPrice());
+			System.out.println("item==================================================="+
+					getItem().getBeizhu());
+			System.out.println("item==================================================="+
+					getItem().getItemRemark());
+			System.out.println("item==================================================="+
+					getItem().getItemDesc());
+			System.out.println("item==================================================="+
+					avail+kindId+userId);
 			mgr.addItem(item ,avail , kindId, userId);
 			return SUCCESS;
 		}

@@ -3,16 +3,6 @@ package org.crazyit.auction.business;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 public class ItemBean
 {
 	private Integer id;
@@ -27,6 +17,10 @@ public class ItemBean
 	private double maxPrice;
 	private Date addTime;
 	private Date endTime;
+	// 照片
+	private String img;
+	//备注
+	private String beizhu;
 
 	// 无参数的构造器
 	public ItemBean()
@@ -35,8 +29,10 @@ public class ItemBean
 	// 初始化全部属性的构造器
 	public ItemBean(Integer id , String name , String desc , String remark,
 		String kind , String owner , String winer , String state ,
-		double initPrice , double maxPrice , Date addTime , Date endTime)
+		double initPrice , double maxPrice , Date addTime , Date endTime,String img,String beizhu)
 	{
+		this.beizhu=beizhu;
+		this.img=img;
 		this.id = id;
 		this.name = name;
 		this.desc = desc;
@@ -49,6 +45,22 @@ public class ItemBean
 		this.maxPrice = maxPrice;
 		this.addTime = addTime;
 		this.endTime = endTime;
+	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	public String getBeizhu() {
+		return beizhu;
+	}
+
+	public void setBeizhu(String beizhu) {
+		this.beizhu = beizhu;
 	}
 
 	// id属性的setter和getter方法

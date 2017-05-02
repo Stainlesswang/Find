@@ -3,17 +3,6 @@ package org.crazyit.auction.domain;
 import java.util.*;
 
 import javax.persistence.*;
-
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2016, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 @Entity
 @Table(name="bid")
 public class Bid
@@ -37,6 +26,15 @@ public class Bid
 	@ManyToOne(targetEntity=AuctionUser.class)
 	@JoinColumn(name="user_id", nullable=false)
 	private AuctionUser bidUser;
+	// 照片
+	@Column(name = "img")
+	private String image;
+	// 备注
+	@Column(name = "beizhu")
+	private String beizhu;
+	// 状态 0=默认状态 1=有帮助 2=无效信息
+	@Column(name = "state")
+	private String state;
 
 	// 无参数的构造器
 	public Bid()
@@ -96,6 +94,30 @@ public class Bid
 	public AuctionUser getBidUser()
 	{
 		return this.bidUser;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public String getBeizhu() {
+		return beizhu;
+	}
+
+	public void setBeizhu(String beizhu) {
+		this.beizhu = beizhu;
 	}
 
 	public int hashCode()

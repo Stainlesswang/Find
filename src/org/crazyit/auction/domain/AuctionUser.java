@@ -16,6 +16,9 @@ public class AuctionUser
 	private String userpass;
 	// 电子邮件属性
 	private String email;
+	//积分属性
+	private Integer jifen;
+
 
 	// 根据属主关联的物品实体
 	@OneToMany(targetEntity=Item.class ,
@@ -42,6 +45,14 @@ public class AuctionUser
 		this.username = username;
 		this.userpass = userpass;
 		this.email = email;
+	}
+
+	public Integer getJifen() {
+		return jifen;
+	}
+
+	public void setJifen(Integer jifen) {
+		this.jifen = jifen;
 	}
 
 	// id的setter和getter方法

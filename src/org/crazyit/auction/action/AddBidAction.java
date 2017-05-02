@@ -8,33 +8,27 @@ import org.crazyit.auction.domain.*;
 import org.crazyit.auction.exception.AuctionException;
 import org.crazyit.auction.action.base.BaseAction;
 
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
+import javax.servlet.http.HttpServletResponse;
+
 public class AddBidAction extends BaseAction
 {
 	// 封装请求参数的属性
 	private int itemId;
 	private Bid bid;
-	private double maxPrice;
+	private double initPrice;
 	private String vercode;
+	private String city;
+	private String address;
 	// 重写validate方法完成自定义输入校验
-	@Override
-	public void validate()
-	{
-		// 用户竞价必须大于物品的当前最高价
-		if(bid.getBidPrice() <= maxPrice)
-		{
-			addFieldError("bid.bidPrice", "您输入的竞价必须高于当前最高价！");
-		}
-	}
+//	@Override
+//	public void validate()
+//	{
+//		// 用户竞价必须大于物品的当前最高价
+//		if(bid.getBidPrice() <= maxPrice)
+//		{
+//			addFieldError("bid.bidPrice", "您输入的竞价必须高于当前最高价！");
+//		}
+//	}
 	// 处理用户竞价
 	public String execute() throws Exception
 	{
@@ -44,9 +38,15 @@ public class AddBidAction extends BaseAction
 		String ver2 = (String)session.get("rand");
 		session.put("rand" , null);
 		// 如果用户输入的验证码和Session中的随机验证码相同
-		if (vercode.equals(ver2))
+//		if (vercode.equals(ver2))
+			if (true)
 		{
+			System.out.println("+++++++++"+bid.getBeizhu());
+			System.out.println("++++++++="+city);
+			System.out.println("++++++++="+address);
+			bid.setBidPrice(initPrice);
 			mgr.addBid(itemId , bid ,userId);
+			addActionMessage("添加成功！转到提供线索页");
 			return SUCCESS;
 		}
 		else
@@ -54,6 +54,22 @@ public class AddBidAction extends BaseAction
 			addActionError("验证码不匹配,请重新输入");
 			return INPUT;
 		}
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	// itemId的setter和getter方法
@@ -76,14 +92,13 @@ public class AddBidAction extends BaseAction
 		return this.bid;
 	}
 
-	// maxPrice的setter和getter方法
-	public void setMaxPrice(double maxPrice)
-	{
-		this.maxPrice = maxPrice;
+	// initPrice的setter和getter方法
+	public double getInitPrice() {
+		return initPrice;
 	}
-	public double getMaxPrice()
-	{
-		return this.maxPrice;
+
+	public void setInitPrice(double initPrice) {
+		this.initPrice = initPrice;
 	}
 
 	// vercode的setter和getter方法

@@ -8,17 +8,6 @@ import org.crazyit.auction.business.*;
 import org.crazyit.auction.exception.AuctionException;
 import org.crazyit.auction.action.base.BaseAction;
 import org.crazyit.auction.domain.*;
-
-/**
- * Description:
- * <br/>网站: <a href="http://www.crazyit.org">疯狂Java联盟</a>
- * <br/>Copyright (C), 2001-2012, Yeeku.H.Lee
- * <br/>This program is protected by copyright laws.
- * <br/>Program Name:
- * <br/>Date:
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 public class ViewItemAction extends BaseAction
 {
 	private int kindId;
@@ -27,17 +16,16 @@ public class ViewItemAction extends BaseAction
 
 	public String execute()throws Exception
 	{
-		if (kindId <= 0)
-		{
-			addActionError("您必须选择有效的种类");
-			return ERROR;
+
+		Map session = ActionContext.getContext().getSession();
+		Integer userId = (Integer)session.get("userId");
+		List<ItemBean> items2=mgr.findItemAll(userId);
+		if (items2.size()==0){
+			System.out.println("items2Nullllllllllllllllllllllllllllllllllllllll");
 		}
-		else
-		{
-			setKind(mgr.getKind(kindId));
-			setItems(mgr.getItemsByKind(kindId));
+			setItems(mgr.findItemAll(userId));
 			return SUCCESS;
-		}
+
 	}
 
 	// kindId的setter和getter方法

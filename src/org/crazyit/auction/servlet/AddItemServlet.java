@@ -38,11 +38,13 @@ public class AddItemServlet extends BaseServlet
 		String initPrice = request.getParameter("initPrice");
 		String kindId = request.getParameter("kindId");
 		String avail = request.getParameter("availTime");
+		String img="a";
+		String desc="b";
 		// 获取业务逻辑组件
 		AuctionManager auctionManager = (AuctionManager)getCtx().getBean("mgr");
 		// 调用业务逻辑组件的方法来添加物品
 		int itemId = auctionManager.addItem(new Item(itemName , itemDesc
-			, remark , Double.parseDouble(initPrice))
+			, remark , Double.parseDouble(initPrice),img,desc)
 			, Integer.parseInt(avail) , Integer.parseInt(kindId) , userId);
 		response.setContentType("text/html; charset=GBK");
 		// 添加成功

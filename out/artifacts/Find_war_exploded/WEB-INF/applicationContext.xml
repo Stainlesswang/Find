@@ -59,8 +59,7 @@
 	<!-- 配置Hibernate的局部事务管理器，使用HibernateTransactionManager类 -->
 	<!-- 该类实现PlatformTransactionManager接口，是针对Hibernate的特定实现-->
 	<!-- 配置HibernateTransactionManager时需要依注入SessionFactory的引用 -->
-	<bean id="transactionManager" class=
-		"org.springframework.orm.hibernate4.HibernateTransactionManager"
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
 		p:sessionFactory-ref="sessionFactory"/>
 
 	<!-- 配置事务切面Bean,指定事务管理器 -->
